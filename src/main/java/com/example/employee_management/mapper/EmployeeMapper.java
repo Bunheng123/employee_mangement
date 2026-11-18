@@ -14,6 +14,7 @@ public class EmployeeMapper {
         EmployeeResponse response = new EmployeeResponse();
         response.setId(employee.getId());
         response.setFirstName(employee.getFirstName());
+        response.setLastName(employee.getLastName());
         response.setEmail(employee.getEmail());
         response.setDepartment(employee.getDepartment());
         response.setSalary(employee.getSalary());
@@ -26,6 +27,7 @@ public class EmployeeMapper {
         Employee employee = new Employee();
         employee.setFirstName(request.getFirstName());
         employee.setLastName(request.getLastName());
+        employee.setEmail(request.getEmail());
         employee.setDepartment(request.getDepartment());
         employee.setSalary(request.getSalary());
 
@@ -33,12 +35,11 @@ public class EmployeeMapper {
     }
 
     public void  toUpdateEntity(Employee employee , EmployeeRequest request){
-        EmployeeRequest existingEmployee = new EmployeeRequest();
-        existingEmployee.setFirstName(request.getFirstName());
-        existingEmployee.setLastName(request.getLastName());
-        existingEmployee.setEmail(request.getEmail());
-        existingEmployee.setDepartment(request.getDepartment());
-        existingEmployee.setSalary(request.getSalary());
+        employee.setFirstName(request.getFirstName()); 
+        employee.setLastName(request.getLastName());
+        employee.setEmail(request.getEmail());
+        employee.setDepartment(request.getDepartment());
+        employee.setSalary(request.getSalary());
 
     }
 
